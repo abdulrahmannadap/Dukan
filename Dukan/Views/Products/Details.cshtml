@@ -1,0 +1,60 @@
+﻿@model Dukan.Models.Master.Product
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Row start -->
+<div class="row">
+    <div class="col-xxl-12">
+        <div class="card shadow mb-4">
+            <!-- Card Header -->
+            <div class="card-header">
+                <h5 class="card-title">Product Details</h5>
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-12">
+                        <dl class="row">
+                            <dt class="col-sm-4">Name:</dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.ProName)
+                            </dd>
+                            <dt class="col-sm-4">Brand:</dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.Brand)
+                            </dd>
+                        </dl>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <dl class="row">
+                            <dt class="col-sm-4">MRP:</dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.Mrp)
+                            </dd>
+                            <dt class="col-sm-4">Quantity:</dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.NoQuantity)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Footer -->
+            <div class="card-footer">
+                <div class="d-flex gap-2 justify-content-end">
+                    <a asp-action="Edit" asp-route-id="@Model?.ProId" class="btn btn-primary">
+                        Edit
+                    </a>
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        Cancel
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Row end -->

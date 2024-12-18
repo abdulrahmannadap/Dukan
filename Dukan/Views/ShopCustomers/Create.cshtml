@@ -1,0 +1,154 @@
+﻿@model Dukan.Models.Master.ShopCustomer
+
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+
+
+<!-- Row start -->
+<div class="row">
+    <div class="col-xxl-12">
+        <div class="card shadow mb-4">
+            <div class="card-header">
+                <h5 class="card-title">Shop Customer</h5>
+            </div>
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="card-body">
+                    <!-- Row start -->
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="ScusName" class="control-label"></label>
+                                <input asp-for="ScusName" class="form-control" />
+                                <span asp-validation-for="ScusName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="ScusAdd" class="control-label"></label>
+                                <input asp-for="ScusAdd" class="form-control" />
+                                <span asp-validation-for="ScusAdd" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="ScusShopName" class="control-label"></label>
+                                <input asp-for="ScusShopName" class="form-control" />
+                                <span asp-validation-for="ScusShopName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="JoindDate" class="control-label"></label>
+                                <input asp-for="JoindDate" class="form-control" />
+                                <span asp-validation-for="JoindDate" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="ScusMobileNo" class="control-label"></label>
+                                <input asp-for="ScusMobileNo" class="form-control" />
+                                <span asp-validation-for="ScusMobileNo" class="text-danger"></span>
+                            </div>
+                        </div>     
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="ScusAddharNo" class="control-label"></label>
+                                <input asp-for="ScusAddharNo" class="form-control" />
+                                <span asp-validation-for="ScusAddharNo" class="text-danger"></span>
+                            </div>
+                        </div>    
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="ScusGSTNo" class="control-label"></label>
+                                <input asp-for="ScusGSTNo" class="form-control" />
+                                <span asp-validation-for="ScusGSTNo" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Row end -->
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex gap-2 justify-content-end">
+                        <a asp-action="Index" class="btn btn-outline-secondary">
+                            Cancel
+                        </a>
+                        <button type="submit" value="Create" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Row end -->
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+
+
+@* 
+<h1>Create</h1>
+
+<h4>ShopCustomer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="ScusName" class="control-label"></label>
+                <input asp-for="ScusName" class="form-control" />
+                <span asp-validation-for="ScusName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScusAdd" class="control-label"></label>
+                <input asp-for="ScusAdd" class="form-control" />
+                <span asp-validation-for="ScusAdd" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScusShopName" class="control-label"></label>
+                <input asp-for="ScusShopName" class="form-control" />
+                <span asp-validation-for="ScusShopName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="JoindDate" class="control-label"></label>
+                <input asp-for="JoindDate" class="form-control" />
+                <span asp-validation-for="JoindDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScusMobileNo" class="control-label"></label>
+                <input asp-for="ScusMobileNo" class="form-control" />
+                <span asp-validation-for="ScusMobileNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScusAddharNo" class="control-label"></label>
+                <input asp-for="ScusAddharNo" class="form-control" />
+                <span asp-validation-for="ScusAddharNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ScusGSTNo" class="control-label"></label>
+                <input asp-for="ScusGSTNo" class="form-control" />
+                <span asp-validation-for="ScusGSTNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div> *@

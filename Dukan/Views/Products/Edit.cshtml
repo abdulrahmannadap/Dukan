@@ -1,0 +1,72 @@
+﻿@model Dukan.Models.Master.Product
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Row start -->
+<div class="row">
+    <div class="col-xxl-12">
+        <div class="card shadow mb-4">
+            <div class="card-header">
+                <h5 class="card-title">Product</h5>
+            </div>
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <input type="hidden" asp-for="ProId" />
+
+                <div class="card-body">
+                    <!-- Row start -->
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="ProName" class="control-label"></label>
+                                <input asp-for="ProName" class="form-control" />
+                                <span asp-validation-for="ProName" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="Brand" class="control-label"></label>
+                                <input asp-for="Brand" class="form-control" />
+                                <span asp-validation-for="Brand" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="Mrp" class="control-label"></label>
+                                <input asp-for="Mrp" class="form-control" />
+                                <span asp-validation-for="Mrp" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="NoQuantity" class="control-label"></label>
+                                <input asp-for="NoQuantity" class="form-control" />
+                                <span asp-validation-for="NoQuantity" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Row end -->
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex gap-2 justify-content-end">
+                        <a  asp-action="Index" class="btn btn-outline-secondary">
+                            Cancel
+                        </a>
+                        <button type="submit" value="Create" class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Row end -->
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

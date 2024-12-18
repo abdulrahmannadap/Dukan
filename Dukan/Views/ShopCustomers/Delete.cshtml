@@ -1,0 +1,82 @@
+﻿@model Dukan.Models.Master.ShopCustomer
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Row start -->
+<div class="row">
+    <div class="col-xxl-12">
+        <div class="card shadow mb-4">
+            <!-- Card Header -->
+            <div class="card-header">
+                <h5 class="card-title">Delete Shop Customer</h5>
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body">
+                <h3>Are you sure you want to delete this?</h3>
+                <h4>Shop Customer Details</h4>
+                <hr />
+                <div>
+                    <dl class="row">
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.ScusName)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.ScusName)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.ScusAdd)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.ScusAdd)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.ScusShopName)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.ScusShopName)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.JoindDate)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.JoindDate)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.ScusMobileNo)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.ScusMobileNo)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.ScusAddharNo)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.ScusAddharNo)
+                        </dd>
+                        <dt class="col-sm-2">
+                            @Html.DisplayNameFor(model => model.ScusGSTNo)
+                        </dt>
+                        <dd class="col-sm-10">
+                            @Html.DisplayFor(model => model.ScusGSTNo)
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+
+            <!-- Card Footer -->
+            <div class="card-footer">
+                <form asp-action="Delete">
+                    <input type="hidden" asp-for="SCusId" />
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        Back to List
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Row end -->

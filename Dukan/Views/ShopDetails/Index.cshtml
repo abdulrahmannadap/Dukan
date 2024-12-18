@@ -1,0 +1,93 @@
+﻿@model IEnumerable<Dukan.Models.Master.ShopDetail>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-xxl-12">
+        <div class="card shadow mb-4">
+            <div class="card-header d-flex align-items-center">
+                <h5 class="card-title">Business Owner</h5>
+                <a asp-action="Index" asp-controller="Home" class="btn btn-outline-secondary ms-auto">
+                    <i class="bi bi-arrow-left me-2"></i> Back
+                </a>
+
+                <a asp-action="Create" class="btn btn-outline-secondary ms-auto">
+                    Add
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xxl-12">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="mainTable" class="table table-bordered table-hover w-100 card-table m-0 text-nowrap no-footer dataTable">
+
+
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShopOwnerName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShopName)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShopNumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.AlternateMobileNumber)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShopAddress)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShopGSTNo)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShopOwnerName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShopName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShopNumber)
+                                    </td> 
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.AlternateMobileNumber)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShopAddress)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShopGSTNo)
+                                    </td>
+                                    <td>
+
+                                        <a asp-action="Edit" class="btn btn-primary btn-sm" asp-route-id="@item.SpDetId"><i class="bi bi-pencil"></i> </a> |
+                                        <a asp-action="Details" class="btn btn-info btn-sm" asp-route-id="@item.SpDetId"><i class="bi bi-info-square"></i></a> |
+                                        <a asp-action="Delete" class="btn btn-danger btn-icon btn-sm mb-1" asp-route-id="@item.SpDetId"><i class="bi bi-trash"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,68 @@
+﻿@model Dukan.Models.Master.Customer
+
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Row start -->
+<div class="row">
+    <div class="col-xxl-12">
+        <div class="card shadow mb-4">
+            <!-- Card Header -->
+            <div class="card-header">
+                <h5 class="card-title">Delete Customer</h5>
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body">
+                <h6>Are you sure you want to delete this customer?</h6>
+                <div class="row">
+                    <!-- Column 1 -->
+                    <div class="col-lg-6 col-sm-12">
+                        <dl class="row">
+                            <dt class="col-sm-4">Name:</dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.CusName)
+                            </dd>
+                            <dt class="col-sm-4">Contact Number:</dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.CusNumber)
+                            </dd>
+                            <dt class="col-sm-4">Address:</dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.CusAddress)
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- Column 2 -->
+                    <div class="col-lg-6 col-sm-12">
+                        <dl class="row">
+                            <dt class="col-sm-4">Vehicle No:</dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.CusVehicleNo)
+                            </dd>
+                            <dt class="col-sm-4">Aadhar No:</dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.CusAadharNo)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Footer -->
+            <div class="card-footer">
+                <form asp-action="Delete" class="d-flex gap-2 justify-content-end">
+                    <input type="hidden" asp-for="CusId" />
+                    <button type="submit" class="btn btn-danger">
+                        Delete
+                    </button>
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        Back to List
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Row end -->

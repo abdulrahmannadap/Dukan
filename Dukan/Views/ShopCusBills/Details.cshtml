@@ -1,0 +1,97 @@
+﻿@model Dukan.Models.Bill.ShopCusBill
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Row start -->
+<div class="row">
+    <div class="col-xxl-12">
+        <div class="card shadow mb-4">
+            <!-- Card Header -->
+            <div class="card-header">
+                <h5 class="card-title">Shop Customer Bill Details</h5>
+            </div>
+
+            <!-- Card Body -->
+            <div class="card-body">
+                <div class="row">
+                    <!-- Shop Details Section -->
+                    <div class="col-lg-6 col-sm-12">
+                        <dl class="row">
+                            <dt class="col-sm-4">
+                                @Html.DisplayNameFor(model => model.ShopDetails)
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.ShopDetails.ShopAddress)
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- Shop Customer Section -->
+                    <div class="col-lg-6 col-sm-12">
+                        <dl class="row">
+                            <dt class="col-sm-4">
+                                @Html.DisplayNameFor(model => model.ShopCustomers)
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.ShopCustomers.ScusAdd)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <!-- Product Details Section -->
+                    <div class="col-lg-6 col-sm-12">
+                        <dl class="row">
+                            <dt class="col-sm-4">
+                                @Html.DisplayNameFor(model => model.Products)
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.Products.Brand)
+                            </dd>
+                        </dl>
+                    </div>
+                    <!-- Quantity and Amount Section -->
+                    <div class="col-lg-6 col-sm-12">
+                        <dl class="row">
+                            <dt class="col-sm-4">
+                                @Html.DisplayNameFor(model => model.Quantity)
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.Quantity)
+                            </dd>
+
+                            <dt class="col-sm-4">
+                                @Html.DisplayNameFor(model => model.Amount)
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.Amount)
+                            </dd>
+
+                            <dt class="col-sm-4">
+                                @Html.DisplayNameFor(model => model.Percentage)
+                            </dt>
+                            <dd class="col-sm-8">
+                                @Html.DisplayFor(model => model.Percentage)
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Card Footer -->
+            <div class="card-footer">
+                <div class="d-flex gap-2 justify-content-end">
+                    <a asp-action="Edit" asp-route-id="@Model?.SopCusBId" class="btn btn-primary">
+                        Edit
+                    </a>
+                    <a asp-action="Index" class="btn btn-outline-secondary">
+                        Back to List
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Row end -->

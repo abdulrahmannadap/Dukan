@@ -1,0 +1,136 @@
+﻿@model Dukan.Models.Bill.ShopCusBill
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<!-- Row start -->
+<div class="row">
+    <div class="col-xxl-12">
+        <div class="card shadow mb-4">
+            <div class="card-header">
+                <h5 class="card-title">Shop Customer Create Bill</h5>
+            </div>
+            <form asp-action="Edit" >
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="card-body">
+                    <!-- Row start -->
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="SpDetId" class="control-label"></label>
+                                <select asp-for="SpDetId" class="form-control" asp-items="ViewBag.SpDetId"></select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="SCusId" class="control-label"></label>
+                                <select asp-for="SCusId" class="form-control" asp-items="ViewBag.SCusId"></select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="ProId" class="control-label"></label>
+                                <select asp-for="ProId" class="form-control" asp-items="ViewBag.ProId"></select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="Quantity" class="control-label"></label>
+                                <input asp-for="Quantity" class="form-control" />
+                                <span asp-validation-for="Quantity" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="Amount" class="control-label"></label>
+                                <input asp-for="Amount" class="form-control" />
+                                <span asp-validation-for="Amount" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-4 col-12">
+                            <div class="mb-3">
+                                <label asp-for="Percentage" class="control-label"></label>
+                                <input asp-for="Percentage" class="form-control" />
+                                <span asp-validation-for="Percentage" class="text-danger"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Row end -->
+                </div>
+                <div class="card-footer">
+                    <div class="d-flex gap-2 justify-content-end">
+                        <a asp-action="Index" class="btn btn-outline-secondary">
+                            Cancel
+                        </a>
+                        <button type="submit"  class="btn btn-primary">
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Row end -->
+
+
+@* 
+<h1>Edit</h1>
+
+<h4>ShopCusBill</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="SopCusBId" />
+            <div class="form-group">
+                <label asp-for="SpDetId" class="control-label"></label>
+                <select asp-for="SpDetId" class="form-control" asp-items="ViewBag.SpDetId"></select>
+                <span asp-validation-for="SpDetId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SCusId" class="control-label"></label>
+                <select asp-for="SCusId" class="form-control" asp-items="ViewBag.SCusId"></select>
+                <span asp-validation-for="SCusId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ProId" class="control-label"></label>
+                <select asp-for="ProId" class="form-control" asp-items="ViewBag.ProId"></select>
+                <span asp-validation-for="ProId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Amount" class="control-label"></label>
+                <input asp-for="Amount" class="form-control" />
+                <span asp-validation-for="Amount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Percentage" class="control-label"></label>
+                <input asp-for="Percentage" class="form-control" />
+                <span asp-validation-for="Percentage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+ *@
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,94 @@
+﻿@model IEnumerable<Dukan.Models.Bill.ShopCusBill>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="row">
+    <div class="col-xxl-12">
+        <div class="card shadow mb-4">
+            <div class="card-header d-flex align-items-center">
+                <h5 class="card-title">Shop Customer Bill</h5>
+                <a asp-action="Index" asp-controller="Home" class="btn btn-outline-secondary ms-auto">
+                    <i class="bi bi-arrow-left me-2"></i> Back
+                </a>
+
+                <a asp-action="Create" class="btn btn-outline-secondary ms-auto">
+                    Add
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-xxl-12">
+        <div class="card shadow mb-4">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table id="mainTable" class="table table-bordered table-hover w-100 card-table m-0 text-nowrap no-footer dataTable">
+
+                        <thead>
+                            <tr>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShopDetails)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.ShopCustomers)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Products)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Quantity)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Amount)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Percentage)
+                                </th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShopDetails.ShopAddress)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ShopCustomers.ScusAdd)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Products.Brand)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Quantity)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Amount)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Percentage)
+                                    </td>
+                                    <td>
+
+
+                                        <a asp-action="Edit" class="btn btn-primary btn-sm" asp-route-id="@item.SopCusBId"><i class="bi bi-pencil"></i> </a> |
+                                        <a asp-action="Details" class="btn btn-info btn-sm" asp-route-id="@item.SopCusBId"><i class="bi bi-info-square"></i></a> |
+                                        <a asp-action="Delete" class="btn btn-danger btn-icon btn-sm mb-1" asp-route-id="@item.SopCusBId"><i class="bi bi-trash"></i></a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
